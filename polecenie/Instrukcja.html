@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+	<title>Windows Forms - zadanie 2</title>
+	<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+</head>
+<body>
+<h4>Część 1</h4>
+<p>Mini Paint</p>
+<ul>
+	<li><a href="MiniPaintLab.exe">Aplikacja przykładowa</a></li>
+	<li>Okno główne:
+    <ul>
+		<li>Okno pojawia się na środku ekranu</li>
+	    <li>Minialny rozmiar okna: 640x480</li>
+		<li>Okno główne składa się z trzech części: toolstrip na górze, obszar rysowania zajmujący 90% szerokości 
+		okna niezależnie od rozmiaru oraz sekcja kolorów zajmująca pozostałe 10% szerokości.
+		</li>
+		<li>Bitmapa w obszarze rysowania ma białe tło i zawsze dostosowuje się wielkością do obszaru rysowania.</li>
+		<li>Sekcja kolorów po prawej stronie zawiera pusty group box zmieniający swój rozmiar wraz z oknem.</li>
+		<li>Toolstrip zawiera jedynie sekcję "Tools" z przyciskiem pędzla.</li>
+		<li>Kursor jest ustawiany na krzyżyk podczas poruszania się po obszarze rysowania.</li>
+    </ul>
+	</li>
+	<li>Pędzel:
+       <ul>
+        <li>Kiedy pędzel zostaje wybrany, użytkownik może rysować linie klikając i trzymając LPM nad obszarem rysowania.</li>
+        <li>Kolor pędzla powinien być ustawiony na czarny, a grubość kreski na 1.</li>
+		<li>Rysowanie może być przerwane poprzez puszczenie LPM lub naciśnięcie PPM podczas rysowania.</li>
+	   </ul>
+	</li>
+    <li>Sekcja kolorów:
+       <ul>
+        <li>Group box powinien być wypełniony wszystkimi kolorami z klasy KnownColor.</li>
+        <li>Każdy kolor jest reprezentowany przez ikonkę o rozmiarze 25x25 wypełnioną tym właśnie kolorem.</li>
+		<li>Kliknięcie na ikonkę zmienia aktualny kolor rysowania.</li>
+		<li>Zawartość group boxa powinno dać się przewijać kółkiem myszy.</li>
+		<li>Sekcja kolorów ma płynny layout - im szersze okno, tym więcej ikonek mieści się w jednym rzędzie.</li>
+	   </ul>
+	</li>
+  <li>Wskazówki:
+    <ul>
+        <li>TableLayoutPanel, PictureBox, SizeChanged Event</li>
+        <li>MouseDown, MouseMove, MouseUp Events, Graphics methods, Refresh method</li>
+        <li>FlowLayoutPanel, AutoScroll Property, Color.FromKnownColor Method</li>
+    </ul>
+  </li>
+  <li><i>Uwaga: We wszystkich wątpliwych i nieopisanych aspektach obowiązuje odtwarzanie zachowania programu wzorcowego (poza ewentualnymi błędami).</i></li>
+</ul>
+
+<ul>
+	<li>Punktacja:
+	<ul>
+		<li>"Okno główne" i "Pędzel": 4 punkty</li>
+		<li>"Sekcja kolorów": 4 punkty</li>
+		<li><i>Uwaga: nie ma możliwości zdobycia punktów za niepełne funkcjonalności</i></li>
+	</ul>
+	</li>
+</ul>
+
+<h4>Część 2</h4>
+<ul>
+  <li><a href="MiniPaintHome.exe">Aplikacja przykładowa</a></li>
+  <li>Ogólne:
+       <ul>
+	   <li>Ikonki użyte w aplikacji przykładowej można znaleźć <a href="icons.zip">tutaj</a></li>
+	   <li>Każda sekcja w toolstripie jest oddzielona pionowym separatorem (patrz aplikacja przykładowa)</li>
+       </ul>
+  </li>
+  <li>Plik:
+       <ul>
+	   <li>Bitmapa może być zapisywana oraz wczytywana pod następującymi rozszerzeniami: .png, .bmp, .jpeg</li>
+	   <li>Wielkość okna musi się dostosowywać do rozmiaru wczytanej bitmapy.</li>
+       </ul>
+  </li>
+  <li>Narzędzia:
+       <ul>
+	    <li>Oprócz pędzla użytkownik ma do wyboru również narzędzia do tworzenia prostokątów i elips.</li>
+		<li>Oba te narzędzia działają tak jak w programie MS Paint - trzymanie LPM i poruszanie po obszarze 
+		rysowania wyświetla odpowiedni kształt i podczas puszczenia LPM obiekt zostaje na stałe dodany do bitmapy.</li>
+		<li>Kliknięcie PPM podczas tworzenia obiektu powoduje przerwanie tworzenia.</li>
+		<li>Tylko jedno narzędzie może być wybrane jednocześnie.</li>
+		<li>Narzędzie "Clear" czyści bitmapę używając białego koloru.</li>
+		<li>Dla wszystkich narzędzi można wybrać różną grubość (1-mała, 2-średnia, 3-duża) </li>
+       </ul>
+  </li>
+  <li>Wybrany kolor:
+       <ul>
+	    <li>Pasek na górze zawiera również małą ikonkę informującą o aktualnie wybranym kolorze.</li>
+	    <li>Oprócz tego, w sekcji kolorów po prawej stronie, aktualnie wybrany kolor jest zaznaczony 
+		przerywaną linią w kolorze odwrotnym (negatywnym) do wybranego.</li>
+		</ul>
+  </li>
+  <li>Języki i lokalizacja:
+       <ul>
+	   <li>Aplikacja powinna wspierać lokalizację i obsługiwać dwa dowolne języki.</li>
+		<li>Przy włączeniu aplikacja jest ustawiona na język a.</li>
+		<li>Toolstrip zawiera dwa przyciski które zmieniają aktualne culture info. Każdy napis (włączając w to tooltipy) 
+		powinien zostać zmieniony na odpowiednik w innym języku.</br><b>Uwaga:</b> powinno być to wykonane przy użyciu mechanizmu lokalizacji
+		- podmienianie właściwości Text/Title nie będzie punktowane</li>
+		<li>Wszystkie kontrolki powinny być poprawnie przeładowane po zmianie lokalizacji, wliczając w to aktualnie wybrane narzędzie, grubość itp.</li>
+		<li>Okno główne powinno pozostać w tej samej pozycji oraz być tej samej wielkości.</li>
+		</ul>
+  </li>
+
+  <li>Wskazówki:
+    <ul>
+		<li>Image.Save, Image.FromFile</li>
+        <li>DrawEllipse, DrawRectangle</li>
+        <li>Invalidate method, DashPattern, Color.ToArgb, Color.FromArgb</li>
+        <li>Form.Localizable, CultureInfo.CurrentUICulture</li>
+    </ul>
+  </li>
+  <li><i>Uwaga: We wszystkich wątpliwych i nieopisanych aspektach obowiązuje odtwarzanie zachowania programu wzorcowego (poza ewentualnymi błędami).</i></li>
+</ul>
+<ul>
+	<li>Orientacyjna punktacja:
+	<ul>
+		<li> poprawne wczytywanie i zapisywanie plików: 2 punkty</li>`
+        <li> narzędzia tworzenia prostokątów i elips: 3 punkty </li>
+		<li> ustawienie grubości i czyszczenie obrazu: 1 punkt</li>
+		<li> ikonka wybranego koloru w górnym pasku: 1 punkt</li>
+        <li> zaznaczenie wybranego koloru przerywaną linią w sekcji kolorów: 1 punkt </li>
+		<li> lokalizacja i zmiana języka: 2 punkty </li>
+        <li> poprawne zachowanie się aplikacji po zmianie lokalizacji: 2 punkty </li>
+		
+		<li><i>Uwaga: aby oddać cz.2 należy spełnić wszystkie funkcjonalności z cz.1</i></li>
+
+	</ul>
+	</li>
+</ul>
+</body>
+
+</html>
